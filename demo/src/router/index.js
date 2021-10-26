@@ -1,11 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Emit from '../views/Emit.vue'
+import DataLoad from '../views/DataLoad.vue'
+
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/emit',
+    name: 'emit',
+    component: Emit
+  },
+  {
+    path: '/dataload',
+    name: 'dataload',
+    component: DataLoad
   },
   {
     path: '/about',
