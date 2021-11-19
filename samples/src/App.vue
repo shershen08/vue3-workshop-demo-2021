@@ -9,11 +9,22 @@
   </ul>
   <br><br>
   <router-view/>
+
+  <hr/>
+  <ScriptSetup/>
+  <ExperimentRefs/>
+  
 </template>
 <script>
 import { provideName } from './hooks/appName'
+import ScriptSetup from './components/ScriptSetup.vue'
+import ExperimentRefs from './components/ExperimentRefs.vue'
 
 export default {
+  components: {
+    ScriptSetup,
+    ExperimentRefs
+  },
   setup () {
     const routes = [
       'teleport',

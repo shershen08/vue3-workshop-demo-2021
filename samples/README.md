@@ -25,5 +25,13 @@ npm run test:unit
 npm run lint
 ```
 
+
+### Generate MSW
+```
+npx msw init public/
+```
+see: https://www.vuemastery.com/blog/mock-service-worker-api-mocking-for-vuejs-development-testing/
+
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

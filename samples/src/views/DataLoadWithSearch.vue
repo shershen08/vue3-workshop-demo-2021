@@ -1,9 +1,19 @@
 <template>
-    <input type="text" v-model="search"/> {{search}}
-    <button @click="reloadUsers">reload users</button>
+     <div class="row align-items-start mb-4">
+       
+    <div class="col col-8">
+    <input class="form-control" type="text" v-model="search"/> {{search}}
+        </div>
+    <div class="col text-start">
+       <button class="btn btn-primary" @click="reloadUsers">reload users</button>
+    </div>
+     </div>
 
-        <div class="card col-2">
-             <h3>Selected user</h3>
+     <div class="row align-items-start">
+    <div class="col col-4">
+          <h3>Selected user</h3>
+        <div class="card">
+         
         <img v-bind:src="profileImageUrl" class="card-img-top" width="200" alt="...">
 
         <div class="card-body">
@@ -12,6 +22,22 @@
                 <a href="#">{{userFromHook.email}}</a>
         </div>
         </div>
+    </div>
+    <div class="col">
+      
+    <!-- userData -->
+    <div class="card mt-1" v-for="user in userData" :key="user.id">
+        <div class="card-body text-start">
+            <h5 class="card-title">{{user.name}}</h5>
+            <p class="card-text">{{user.city}} {{user.zipcode}}</p>
+            <a href="#">{{user.email}}</a>
+            <button class="btn btn-secondary m-2" @click="selectUser(user)">select {{user.name}}</button>
+        </div>
+    </div>
+    </div>
+  </div>
+
+      
 
     <br><br>
     <!-- usersMatchingSearchQuery -->
@@ -32,15 +58,6 @@
         </div>
     </div> -->
 
-    <!-- userData -->
-    <div class="card" style="width: 18rem;" v-for="user in userData" :key="user.id">
-        <div class="card-body">
-            <h5 class="card-title">{{user.name}}</h5>
-            <p class="card-text">{{user.city}} {{user.zipcode}}</p>
-            <a href="#">{{user.email}}</a>
-            <button class="btn btn-secondary" @click="selectUser(user)">select {{user.name}}</button>
-        </div>
-    </div>
 </template>
 
 <script>
