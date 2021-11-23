@@ -1,17 +1,14 @@
 <template>
   <Header/>
-    <img alt="Vue logo" src="./assets/logo.png">
-  
+  <img alt="Vue logo" src="./assets/logo.png">
+    
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/emit">emit</router-link>
-    <router-link to="/dataload">dataload</router-link>
+    <router-link to="/emit">Component communication</router-link> |
+    <router-link to="/dataload">API data loading</router-link> |
+    <router-link to="/about">About</router-link>
   </div>
 
-  <!-- <h3>counter reading: {{counterValue}}</h3>
-  {{counterx2}}
-  <button @click="change">change</button> -->
   <router-view/>
 </template>
 <script>
@@ -22,15 +19,6 @@ import {provideTheme} from './hooks/useTheme'
 export default {
   setup() {
 
-      provideTheme();
-
-      const {counterValue, counterx2} = useCounter();
-
-  
-      return {
-        counterValue,
-        counterx2
-      }
   },
   components: {
     Header
