@@ -14,11 +14,12 @@
 <script>
 import Header from './components/Header.vue'
 import useCounter from './hooks/useCounter'
+
 import {provideTheme} from './hooks/useTheme'
 
 export default {
   setup() {
-
+    provideTheme();
   },
   components: {
     Header
